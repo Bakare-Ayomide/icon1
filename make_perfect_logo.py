@@ -1,0 +1,71 @@
+import os
+
+svg_content = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 170" width="560" height="170">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&amp;display=swap');
+      .logo-text {
+        font-family: 'Nunito', 'Arial Rounded MT Bold', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-weight: 900;
+        fill: #8cc63f;
+        letter-spacing: 1px;
+      }
+    </style>
+    <!-- Soft blur drop shadow matching Canva original -->
+    <filter id="canva-shadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.8"/>
+      <feOffset dx="2.5" dy="3.5" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.36"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#canva-shadow)">
+    <!-- Shield Emblem -->
+    <g id="shield-emblem" transform="translate(10, 8)">
+      <!-- Top Arc 1 (Green) -->
+      <!-- Left side -->
+      <path d="M 28 32 C 45 19 66 14 86 13 L 86 24 C 69 25 50 30 38 40 Z" fill="#1b8844" stroke="#1b8844" stroke-width="1" stroke-linejoin="round"/>
+      <!-- Right side -->
+      <path d="M 94 13 C 114 14 135 19 152 32 L 142 40 C 130 30 111 25 94 24 Z" fill="#1b8844" stroke="#1b8844" stroke-width="1" stroke-linejoin="round"/>
+
+      <!-- Bar 2 (Green) - Forming 'C' upper on left and horizontal on right -->
+      <!-- Left side -->
+      <path d="M 22 43 C 17 48 16 57 20 63 C 24 69 32 70 42 70 L 68 70 C 73 70 76 66 76 61 C 76 56 73 52 67 52 L 36 52 C 30 52 28 47 31 43 C 46 35 65 31 86 31 L 86 42 C 70 42 54 45 42 50" fill="none" stroke="#229b47" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Right side -->
+      <path d="M 94 31 C 115 31 134 35 149 43 C 152 47 150 52 144 52 L 113 52 C 107 52 104 56 104 61 C 104 66 107 70 112 70 L 138 70 C 148 70 156 69 160 63 C 164 57 163 48 158 43 C 143 35 124 31 94 31" fill="none" stroke="#229b47" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Bar 3 (Brick Red / Terracotta #b53826) -->
+      <!-- Left side: horizontal bar with inner hook -->
+      <path d="M 21 82 C 19 76 23 72 31 72 L 86 72 L 86 83 L 34 83 C 29 83 27 86 27 90 C 27 94 30 97 35 97 L 86 97 L 86 108 L 38 108 C 24 108 19 99 20 90 Z" fill="#b53826"/>
+      <!-- Right side: upper 'S' curve -->
+      <path d="M 94 72 L 149 72 C 157 72 161 76 159 82 C 159 90 154 99 140 108 L 94 108 L 94 97 L 144 97 C 149 97 152 94 152 90 C 152 86 150 83 145 83 L 94 83 Z" fill="#b53826"/>
+
+      <!-- Bar 4 (Lower Brick Red Arc #b53826) -->
+      <path d="M 32 116 C 47 125 66 131 86 133 L 86 122 C 70 120 53 115 40 107 Z" fill="#b53826"/>
+      <path d="M 94 133 C 114 131 133 125 148 116 L 140 107 C 127 115 110 120 94 122 Z" fill="#b53826"/>
+
+      <!-- Bottom Tip: Solid Split Green Chevron -->
+      <!-- Left side (Dark Forest Green) -->
+      <path d="M 35 125 C 49 135 67 146 86 161 L 86 137 C 71 135 53 129 41 121 Z" fill="#1b8543"/>
+      <!-- Right side (Medium Jade Green) -->
+      <path d="M 94 137 L 94 161 C 113 146 131 135 145 125 L 139 121 C 127 129 109 135 94 137 Z" fill="#52a969"/>
+    </g>
+
+    <!-- Wordmark: CYBERNETIC SOLUTIONS -->
+    <g transform="translate(195, 20)">
+      <text x="0" y="52" class="logo-text" font-size="47">CYBERNETIC</text>
+      <text x="0" y="108" class="logo-text" font-size="47">SOLUTIONS</text>
+    </g>
+  </g>
+</svg>'''
+
+with open('cybernetic-solutions-logo.svg', 'w') as f:
+    f.write(svg_content)
+
+print("SVG generated successfully.")

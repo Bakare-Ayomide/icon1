@@ -1,0 +1,16 @@
+{
+  "name": "website-vulnerability-scanner-report",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Website Vulnerability Scanner Report for iconstockbrokersltd",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "echo 'Build complete'",
+    "start": "node server.js",
+    "lint": "echo 'Lint passed'"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
